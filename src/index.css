@@ -21,12 +21,12 @@ img {
 /* || VARIABLES */
 :root {
    /* fonts */
-   --FF: Verdana, Geneva, Tahoma, sans-serif;
+   --FF: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
    --FS: clamp(1.10rem, 1.70vh, 2.2rem);
 
    /* colors */
    --NAV-BGCOLOR: #672280;
-   --NAV-BGLIGHT:  #c76fe7;
+   --NAV-BGLIGHT:  #974cb2;
    --NAV-TEXTCOLOR: #E5E5E5;
 }
 
@@ -41,5 +41,41 @@ body {
    background-color: #c76fe7;
    background-image: linear-gradient(to right, var(--NAV-BGCOLOR), var(--NAV-BGLIGHT));
    color: var(--NAV-TEXTCOLOR);
-   height: 70px;
+   height: 80px;
+   display: flex;
+   flex-flow: row nowrap;
+   align-items: center;
+   padding: 0 1rem;
+   gap: 0.5rem;
+}
+
+/* form */
+.form {
+   margin: 2rem 1rem;
+   display: flex;
+   flex-flow: column;
+   gap: 1.1rem;
+}
+
+.form__input-div {
+   display: flex;
+   gap: 1rem;
+   width: 100%;
+}
+
+.form input, .form button {
+   font-family: inherit;
+   font-size: inherit;
+   padding: 0.5rem;
+   border-radius: 5px;
+   width: 100%;
+}
+
+.form button {
+   background-color: var(--NAV-BGCOLOR);
+   background-image: linear-gradient(to right, var(--NAV-BGCOLOR), var(--NAV-BGLIGHT));
+   color: var(--NAV-TEXTCOLOR);
+   border: none;
+   padding: 1rem;
+   cursor: pointer;
 }
