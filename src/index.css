@@ -1,0 +1,45 @@
+/* || RESETS */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+img {
+   display: block;
+}
+
+/* || UTILITY CLASSES */
+.nowrap {
+   white-space: nowrap;
+}
+
+.center {
+   text-align: center;
+}
+
+/* || VARIABLES */
+:root {
+   /* fonts */
+   --FF: Verdana, Geneva, Tahoma, sans-serif;
+   --FS: clamp(1.10rem, 1.70vh, 2.2rem);
+
+   /* colors */
+   --NAV-BGCOLOR: #672280;
+   --NAV-BGLIGHT:  #c76fe7;
+   --NAV-TEXTCOLOR: #E5E5E5;
+}
+
+/* || GENERAL CLASSES */
+body {
+   font-family: var(--FF);
+   font-size: var(--FS);
+}
+
+/* navbar */
+.nav {
+   background-color: #c76fe7;
+   background-image: linear-gradient(to right, var(--NAV-BGCOLOR), var(--NAV-BGLIGHT));
+   color: var(--NAV-TEXTCOLOR);
+   height: 70px;
+}
