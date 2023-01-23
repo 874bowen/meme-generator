@@ -3,17 +3,23 @@ import { memesData } from "../memesData";
 
 const Memes = () => {
 
-   const [memeImage, setMemeImage] = useState("");
+   const [meme, setMeme] = useState({
+      topText: "",
+      bottomText: "",
+      randomImage: ""
+   });
 
-   const memes = memesData.data.memes
+   const allMemeImages = memesData.data.memes;
 
    function getRandomImage() {
-      let randomIndex = Math.floor(Math.random() * memes.length);
-      console.log(memes[randomIndex]);
-      setMemeImage(`${memes[randomIndex].url}`);
+      let randomIndex = Math.floor(Math.random() * allMemeImages.length);
+      console.log(allMemeImages[randomIndex]);
+      setMeme((prevMeme => ({
+         ...prevMeme,
+         randomImage: `${allMemeImages[randomIndex].url}`
+      })));
    }
 
-   console.log(memeImage)
 
    return(
       <div className="form">
@@ -22,7 +28,7 @@ const Memes = () => {
             <input type="text" name="bottom-text" id="bottom-text" placeholder="and take my money" />
          </div>
          <button onClick={getRandomImage}><h4>Get a new meme image</h4></button>
-         <img src={memeImage} alt=""  />
+         <img src={meme.randomImage} alt=""  />
       </div>
    );
 }
