@@ -2,15 +2,22 @@ import React, { useState } from "react";
 import Box from "./Box";
 
 const Squares = (props) => {
-	let [comment, setComment] = useState("");
+	let [formData, setFormData] = useState({
+		comment: "",
+		range: "10",
+		email: ""
+	})
 
-	let [range, setRange] = useState("10");
+	function handleChange(e) {
+		setFormData((prevData) => ({
+			...prevData,
+			[e.target.name]: e.target.value
+		}))
+	}
 
 	function handleSubmit(e) {
 		e.preventDefault();
-		alert(`You gave us a ${range} star rating and commented: "${comment}"`);
-		setComment("");
-		setRange("10");
+		alert(`${formData.email} gave us a ${formData.range} star rating and commented: "${formData.comment}"`);
 	}
 
 	// let [on, setToOn] = useState(props.on);
@@ -39,26 +46,28 @@ const Squares = (props) => {
 		<>
 			<div className="squares">{sq}</div>
 			<form action="" onSubmit={handleSubmit}>
-				<label htmlFor="range">Rate us: {range} 🌟</label>
+				<label htmlFor="range">Rate us: {formData.range} 🌟</label>
 				<input
 					type="range"
 					name="range"
 					min={0}
 					max={10}
 					id=""
-					value={range}
-					onChange={(e) => setRange(e.target.value)}
+					value={formData.range}
+					onChange={handleChange}
 				/>
+				<label htmlFor="email">Email</label>
+				<input type="email" name="email" id="email" placeholder="abc@gmail.com" value={formData.email} onChange={handleChange} />
 				<label htmlFor="comment">Comment: </label>
 				<textarea
 					name="comment"
 					id=""
 					cols={30}
 					rows={10}
-					value={comment}
-					onChange={(e) => setComment(e.target.value)}
-				></textarea>
-				<button disabled={comment.length < 15 ? true : false} type="submit">
+					value={formData.comment}
+					onChange={handleChange}
+				/>
+				<button disabled={formData.comment.length < 15 ? true : false} type="submit">
 					Submit
 				</button>
 			</form>
