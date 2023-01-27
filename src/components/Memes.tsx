@@ -2,7 +2,16 @@ import React, { useEffect, useState } from "react";
 import { memesData } from "../memesData";
 
 const Memes = () => {
-	const [allMemes, setAllMemes] = useState([]);
+   type MemesArray = {
+      id: string,
+      name: string,
+      url: string,
+      width: number,
+      height: number,
+      box_count: number
+   }
+
+	const [allMemes, setAllMemes] = useState<MemesArray []>([]);
 
 	const [meme, setMeme] = useState({
 		topText: "",
