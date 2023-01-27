@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Boxes } from "./boxes";
 import Memes from "./components/Memes";
 import Navbar from "./components/Navbar";
 
