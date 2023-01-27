@@ -7,6 +7,7 @@
 
 img {
    display: block;
+   max-width: 100%;
 }
 
 /* || UTILITY CLASSES */
@@ -80,17 +81,44 @@ body {
    cursor: pointer;
 }
 
-.squares {
+.form__image-div {
+   position: relative;
    display: flex;
-   flex-grow: 1;
-   flex-flow: row wrap;
-   gap: 0.5rem;
    justify-content: center;
 }
 
-.square {
-   width: 100px;
-   height: 100px;
-   border: 2px solid black;
-   border-radius: 5px;
+.form__meme--text {
+   position: absolute;
+   width: inherit;
+   text-align: center;
+   left: 50%;
+   transform: translateX(-50%);
+   margin: 15px 0;
+   padding: 0 5px;
+   font-family: impact, sans-serif;
+   font-size: 2em;
+   text-transform: uppercase;
+   color: white;
+   letter-spacing: 1px;
+   text-shadow:
+       2px 2px 0 #000,
+       -2px -2px 0 #000,
+       2px -2px 0 #000,
+       -2px 2px 0 #000,
+       0 2px 0 #000,
+       2px 0 0 #000,
+       0 -2px 0 #000,
+       -2px 0 0 #000,
+       2px 2px 5px #000;
 }
+
+.form__top-text {
+   top: 0;
+
+}
+
+.form__bottom-text {
+   bottom: 0;
+}
+
+
