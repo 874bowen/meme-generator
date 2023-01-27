@@ -4,7 +4,6 @@ import Navbar from "./components/Navbar";
 
 
 function App () {
-   const [squares, setSquares] = useState(Boxes);
    
    return (
       <>
